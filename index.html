@@ -1,0 +1,139 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Registro de Ventas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Sistema de Registro de Ventas</h1>
+        <p>Administra tus productos y controla tus ventas</p>
+    </header>
+
+    <main>
+        <section id="resumen">
+            <h2>Resumen de ventas</h2>
+            <p>Total vendido: <strong id="totalVendido">$0</strong></p>
+            <p>Número de ventas: <strong id="cantidadVentas">0</strong></p>
+        </section>
+
+        <section id="registro-productos">
+            <h2>Registrar producto</h2>
+
+            <form id="formProducto">
+                <label for="nombreProducto">Nombre del producto</label>
+                <input
+                    type="text"
+                    id="nombreProducto"
+                    placeholder="Ej. Arroz"
+                    required
+                >
+
+                <label for="precioProducto">Precio (COP)</label>
+                <input
+                    type="number"
+                    id="precioProducto"
+                    min="1"
+                    step="1"
+                    placeholder="Ej. 3000"
+                    required
+                >
+
+                <label for="stockProducto">Cantidad disponible</label>
+                <input
+                    type="number"
+                    id="stockProducto"
+                    min="0"
+                    step="1"
+                    placeholder="Ej. 20"
+                    required
+                >
+
+                <button type="submit">Agregar producto</button>
+            </form>
+        </section>
+
+        <section id="lista-productos">
+            <h2>Productos registrados</h2>
+
+            <div class="tabla-contenedor">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Producto</th>
+                            <th>Precio</th>
+                            <th>Existencias</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tablaProductos">
+                        <tr>
+                     <td colspan="4">Todavía no hay ventas.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="registro-ventas">
+            <h2>Registrar venta</h2>
+
+            <form id="formVenta">
+                <label for="productoVenta">Selecciona un producto</label>
+                <select id="productoVenta" required>
+                    <option value="">Primero registra un producto</option>
+                </select>
+
+                <label for="cantidadVenta">Cantidad a vender</label>
+                <input
+                    type="number"
+                    id="cantidadVenta"
+                    min="1"
+                    step="1"
+                    placeholder="Ej. 2"
+                    required
+                >
+
+                <button type="submit">Registrar venta</button>
+            </form>
+        </section>
+
+        <section id="historial-ventas">
+            <h2>Historial de ventas</h2>
+            <button type="button" id="btnExportar">
+    Descargar reporte de ventas
+</button>
+
+            <div class="tabla-contenedor">
+                <table>
+                    <thead>
+                       <tr>
+    <th>Producto</th>
+    <th>Cantidad</th>
+    <th>Total</th>
+    <th>Fecha y hora</th>
+</tr>
+                    </thead>
+                    <tbody id="tablaVentas">
+                        <tr>
+                            <td colspan="3">Todavía no hay ventas.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Proyecto académico de gestión de ventas</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
